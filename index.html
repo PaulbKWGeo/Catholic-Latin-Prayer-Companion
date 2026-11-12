@@ -29,6 +29,18 @@
 .hero-title p{font-size:clamp(18px,4.3vw,25px);margin:8px 0 0}
 .hero-title:after{content:"✦";display:block;color:#eec47a;font-size:15px;margin:8px auto 0}
 @media(max-width:520px){.hero{min-height:206px;padding:8px 8px 13px}.hero:before{inset:0 0 0 40%;background-position:57% center}.hero-bar{grid-template-columns:40px minmax(0,1fr) 88px}.hero-brand{margin-left:-24px;font-size:9px}.hero-brand:before,.hero-brand:after{width:20px;top:40px}.hero-title{width:66%;margin-top:7px}.hero-title h1{font-size:clamp(29px,7.5vw,37px)}.hero-title p{font-size:clamp(18px,5vw,24px)}}
+
+/* Single sunset photo, never duplicated. Gold-and-blue approved composition. */
+.hero{background-image:linear-gradient(90deg,rgba(7,24,47,.89) 0%,rgba(7,24,47,.78) 37%,rgba(7,24,47,.12) 71%,rgba(7,24,47,0) 100%),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Saint_Peter%27s_Basilica_at_sunset.jpg?width=1280")!important;background-size:cover!important;background-position:68% 43%!important;background-repeat:no-repeat!important;min-height:218px!important;isolation:isolate}
+.hero:before{display:none!important;content:none!important}
+.hero-bar{display:grid;grid-template-columns:44px 1fr 88px;gap:4px;align-items:start}
+.hero-brand{justify-self:center;margin-left:0;text-align:center;z-index:2;white-space:nowrap}
+.hero-brand:before,.hero-brand:after{display:none}
+.hero-title{margin:10px 0 0 0!important;padding:0 2px!important;width:67%!important;max-width:67%!important;text-align:left!important;transform:none!important;position:relative;z-index:2}
+.hero-title h1{font-size:clamp(29px,7vw,44px)!important;line-height:1.07!important;color:#fff8e9}
+.hero-title p{font-size:clamp(18px,4.5vw,24px)!important;color:#f8e3b9}
+.hero-title:after{content:"✦";color:#efc66f;font-size:17px}
+@media(max-width:520px){.hero{min-height:208px!important;background-position:68% 42%!important}.hero-title{width:69%!important;max-width:69%!important;margin-top:9px!important}.hero-title h1{font-size:clamp(28px,7.2vw,36px)!important}}
 </style></head><body><header class="hero"><div class="hero-bar"><button id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><div class="hero-brand"><span class="hero-cross">✝</span><span>ORATIO • LATINA</span></div><div class="hero-tools"><button id="bookmarkToggle" aria-label="Bookmark prayer" title="Bookmark prayer">☆</button><button id="settingsToggle" aria-label="Reading settings" title="Reading settings">⚙</button></div></div><div class="hero-title"><h1 id="heroPrayer">Catholic Latin Prayer Companion</h1><p id="heroTranslation">Pray • Learn • Remember</p></div></header><nav id="mainNav" aria-label="Main navigation" hidden><button data-tab="library" aria-selected="true">Prayers</button><button data-tab="practice" aria-selected="false">Practice</button><button data-tab="progress" aria-selected="false">Progress</button><button id="favoritesNav">Favorites</button></nav><section id="settingsPanel" class="settings-panel" hidden><h2>Reading Settings</h2><label for="fontRange">Prayer text size</label><input id="fontRange" type="range" min="14" max="25" value="18"><label><input type="checkbox" id="stackedToggle"> Stack Latin and English</label><label><input type="checkbox" id="pronDefault"> Open pronunciation by default</label></section><main id="app"></main><script>
 const prayers=[
 {id:"sign",name:"Sign of the Cross",latin:"Signum Crucis",lines:[["In nomine Patris, et Filii,","In the name of the Father, and of the Son,"],["et Spiritus Sancti. Amen.","and of the Holy Spirit. Amen."]],phon:["Een NOH-mee-neh PAH-trees, et FEE-lee-ee,","et SPEE-ree-toos SAHNK-tee. AH-men."]},
