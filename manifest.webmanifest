@@ -1,0 +1,11 @@
+{
+  "name": "Catholic Latin Prayer Companion",
+  "short_name": "Latin Prayers",
+  "description": "Learn Catholic prayers in Ecclesiastical Latin",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f3eb",
+  "theme_color": "#14283b",
+  "lang": "en"
+}
