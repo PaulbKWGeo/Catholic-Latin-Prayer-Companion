@@ -41,6 +41,17 @@
 .hero-title p{font-size:clamp(18px,4.5vw,24px)!important;color:#f8e3b9}
 .hero-title:after{content:"✦";color:#efc66f;font-size:17px}
 @media(max-width:520px){.hero{min-height:208px!important;background-position:68% 42%!important}.hero-title{width:69%!important;max-width:69%!important;margin-top:9px!important}.hero-title h1{font-size:clamp(28px,7.2vw,36px)!important}}
+
+/* Header alignment polish: keep menu isolated, align gold brand with title. */
+.hero{padding-top:10px!important}
+.hero-bar{display:grid!important;grid-template-columns:46px minmax(0,1fr) 96px!important;align-items:start!important;gap:4px!important}
+.hero-bar #menuToggle{grid-column:1;grid-row:1;justify-self:start;min-width:40px;min-height:42px;z-index:3}
+.hero-brand{grid-column:2;grid-row:1;justify-self:start!important;align-items:flex-start!important;margin:0 0 0 8px!important;padding:0!important;text-align:left!important;white-space:nowrap;position:relative}
+.hero-cross{font-family:Georgia,serif!important;font-size:29px!important;line-height:1.05!important;color:#f6c55e!important;text-shadow:0 1px 2px #5b3910,0 0 5px #a66c2a!important;background:none!important;filter:none!important}
+.hero-brand>span:last-child{font:700 10px Georgia,serif!important;letter-spacing:.17em!important;color:#f4d28d!important;text-shadow:0 1px 3px #07172a!important}
+.hero-tools{grid-column:3;grid-row:1;justify-content:flex-end;z-index:3}
+.hero-title{margin-top:15px!important}
+@media(max-width:520px){.hero-bar{grid-template-columns:43px minmax(0,1fr) 90px!important}.hero-brand{margin-left:7px!important}.hero-cross{font-size:27px!important}.hero-brand>span:last-child{font-size:9px!important;letter-spacing:.12em!important}.hero-title{margin-top:12px!important}}
 </style></head><body><header class="hero"><div class="hero-bar"><button id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><div class="hero-brand"><span class="hero-cross">✝</span><span>ORATIO • LATINA</span></div><div class="hero-tools"><button id="bookmarkToggle" aria-label="Bookmark prayer" title="Bookmark prayer">☆</button><button id="settingsToggle" aria-label="Reading settings" title="Reading settings">⚙</button></div></div><div class="hero-title"><h1 id="heroPrayer">Catholic Latin Prayer Companion</h1><p id="heroTranslation">Pray • Learn • Remember</p></div></header><nav id="mainNav" aria-label="Main navigation" hidden><button data-tab="library" aria-selected="true">Prayers</button><button data-tab="practice" aria-selected="false">Practice</button><button data-tab="progress" aria-selected="false">Progress</button><button id="favoritesNav">Favorites</button></nav><section id="settingsPanel" class="settings-panel" hidden><h2>Reading Settings</h2><label for="fontRange">Prayer text size</label><input id="fontRange" type="range" min="14" max="25" value="18"><label><input type="checkbox" id="stackedToggle"> Stack Latin and English</label><label><input type="checkbox" id="pronDefault"> Open pronunciation by default</label></section><main id="app"></main><script>
 const prayers=[
 {id:"sign",name:"Sign of the Cross",latin:"Signum Crucis",lines:[["In nomine Patris, et Filii,","In the name of the Father, and of the Son,"],["et Spiritus Sancti. Amen.","and of the Holy Spirit. Amen."]],phon:["Een NOH-mee-neh PAH-trees, et FEE-lee-ee,","et SPEE-ree-toos SAHNK-tee. AH-men."]},
