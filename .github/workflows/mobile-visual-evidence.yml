@@ -1,0 +1,22 @@
+name: Mobile visual evidence
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Capture local application at iPhone-sized viewport
+        run: node tests/capture-mobile.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mobile-visual-evidence
+          path: visual-evidence/
