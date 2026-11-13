@@ -154,6 +154,32 @@ body.prayer-reading main#app{padding:7px 8px 72px!important}
 .reader-panel .audio{margin-top:10px}
 .reader-panel .actions{margin-top:10px}
 @media(max-width:390px){.reader-panel .pair>div{padding:9px 6px!important}}
+
+/* Reader visual fidelity pass: deliberately isolated to the preview. */
+body.prayer-reading{background:#fffaf0!important}
+body.prayer-reading .hero{box-sizing:border-box!important;flex:0 0 66px!important;height:66px!important;min-height:66px!important;max-height:66px!important;padding:5px 9px!important;background:#10283e!important;overflow:hidden!important}
+body.prayer-reading .hero-bar{height:54px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:3px!important}
+body.prayer-reading .hero-bar .hero-brand{position:static!important;left:auto!important;top:auto!important;transform:none!important;display:flex!important;flex-direction:row!important;gap:7px!important;align-items:center!important;max-width:none!important;margin:0!important;white-space:nowrap!important}
+body.prayer-reading .hero-bar .hero-brand .hero-cross{font:normal 27px/1 Georgia,serif!important;color:#f2c775!important}
+body.prayer-reading .hero-bar .hero-brand>span:last-child{font:700 11px/1.1 Georgia,serif!important;letter-spacing:.11em!important;color:#f2c775!important}
+body.prayer-reading .hero-bar button{font-size:23px!important;min-width:34px!important;min-height:40px!important;padding:2px!important}
+body.prayer-reading .hero-tools{gap:0!important}
+body.prayer-reading main#app{box-sizing:border-box!important;flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;background:#fffaf0!important;padding:0 7px 12px!important}
+body.prayer-reading .reader-back{color:#10283e!important;font:600 12px system-ui!important;padding:6px 2px 3px!important;margin:0!important}
+body.prayer-reading .reader-panel{background:#fffaf0!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0 0 12px!important;margin:0!important}
+body.prayer-reading .reader-heading{background:transparent!important;color:#10243a!important;padding:0 0 7px!important;min-height:0!important}
+body.prayer-reading .reader-heading h2{color:#10243a!important;background:transparent!important;font:700 27px/1.08 Georgia,serif!important;margin:0!important}
+body.prayer-reading .reader-heading p{color:#10243a!important;background:transparent!important;font:italic 20px/1.12 Georgia,serif!important;margin:1px 0!important}
+body.prayer-reading .reader-heading:after{font-size:14px!important;margin-top:1px!important}
+body.prayer-reading .reader-panel .pairs{background:#fffaf0!important;border:0!important;box-shadow:none!important;padding:0!important}
+body.prayer-reading .reader-panel .pair{background:transparent!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;border-bottom:1px solid #d9ccba!important}
+body.prayer-reading .reader-panel .pair.heading{background:#eae0d0!important;border-radius:5px!important}
+body.prayer-reading .reader-panel .pair.heading>div{background:transparent!important;color:#10243a!important;text-align:center!important;font:700 12px system-ui!important;padding:5px!important;border:0!important}
+body.prayer-reading .reader-panel .pair:not(.heading)>div{background:transparent!important;border:0!important;padding:9px 7px!important;font:var(--prayer-size,18px)/1.28 Georgia,serif!important;color:#10243a!important}
+body.prayer-reading .reader-panel .pair:not(.heading)>div:first-child{font-style:italic!important;font-weight:600!important}
+body.prayer-reading .reader-panel .pair:not(.heading):nth-child(2){background:#fff0c9!important;border:1px solid #d4a850!important;border-radius:7px!important}
+body.prayer-reading .app-footer{flex:0 0 auto!important;min-height:50px!important;padding:3px 5px calc(3px + env(safe-area-inset-bottom))!important;gap:1px!important;border-top:2px solid #d8aa53!important}
+body.prayer-reading .app-footer button{min-width:0!important;flex:1!important;font:600 12px Georgia,serif!important;padding:5px 2px!important;min-height:36px!important}
 </style></head><body><header class="hero"><div class="hero-bar"><button id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><div class="hero-brand"><span class="hero-cross" aria-label="Cross">✝︎</span><span>ORATIO • LATINA</span></div><div class="hero-tools"><button id="bookmarkToggle" aria-label="Bookmark prayer" title="Bookmark prayer">☆</button><button id="settingsToggle" aria-label="Reading settings" title="Reading settings">⚙</button></div></div><div class="hero-title"><h1 id="heroPrayer">Catholic Latin Prayer Companion</h1><p id="heroTranslation">Pray • Learn • Remember</p></div></header><nav id="mainNav" aria-label="Main navigation" hidden><button data-tab="library" aria-selected="true">Prayers</button><button data-tab="practice" aria-selected="false">Practice</button><button data-tab="progress" aria-selected="false">Progress</button><button id="favoritesNav">Favorites</button></nav><section id="settingsPanel" class="settings-panel" hidden><h2>Reading Settings</h2><label for="fontRange">Prayer text size</label><input id="fontRange" type="range" min="14" max="25" value="18"><label><input type="checkbox" id="stackedToggle"> Stack Latin and English</label><label><input type="checkbox" id="pronDefault"> Open pronunciation by default</label></section><main id="app"></main><footer class="app-footer" aria-label="Bottom navigation"><button data-footer-tab="library" aria-current="page">Prayers</button><button data-footer-tab="practice">Practice</button><button data-footer-tab="progress">Progress</button></footer><script>
 const prayers=[
 {id:"sign",name:"Sign of the Cross",latin:"Signum Crucis",lines:[["In nomine Patris, et Filii,","In the name of the Father, and of the Son,"],["et Spiritus Sancti. Amen.","and of the Holy Spirit. Amen."]],phon:["Een NOH-mee-neh PAH-trees, et FEE-lee-ee,","et SPEE-ree-toos SAHNK-tee. AH-men."]},
