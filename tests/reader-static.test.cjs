@@ -7,7 +7,7 @@ const reader = fs.readFileSync('reader-preview.html', 'utf8');
 test('twelve prayer records are present in the app', () => {
   const block = html.split('const prayers=[')[1]?.split('];')[0];
   assert.ok(block, 'Prayer data must exist');
-  const ids = [...block.matchAll(/(?:\\bid:|"id":)"([^"]+)"/g)].map(x => x[1]);
+  const ids = [...block.matchAll(/(?:\bid:|"id":)"([^"]+)"/g)].map(x => x[1]);
   assert.equal(ids.length, 12);
   assert.equal(new Set(ids).size, 12);
 });
